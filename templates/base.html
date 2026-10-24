@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% block description %}French clothing and considered everyday essentials from Maison Éloi.{% endblock %}">
+  <meta name="theme-color" content="#ffffff">
+  <title>{% block title %}Maison Éloi | French Clothing{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="announcement" aria-label="Store announcement">Complimentary delivery on orders over €120</div>
+  <header class="site-header">
+    <nav class="primary-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/" aria-label="Maison Éloi home">
+          <span class="brand-mark" aria-hidden="true">M<span>.</span></span>
+          <span class="brand-name">Maison Éloi</span>
+        </a>
+        <form class="search-form" role="search" action="/" method="get">
+          <label class="visually-hidden" for="site-search">Search the collection</label>
+          <input id="site-search" name="q" type="search" placeholder="Search the collection">
+          <button type="submit">Search</button>
+        </form>
+        <details class="account-menu">
+          <summary aria-label="Open account menu">
+            <span class="account-symbol" aria-hidden="true">◉</span>
+            <span>Account</span>
+            <span class="account-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="account-panel">
+            <p class="account-title">Your Maison Éloi</p>
+            <a href="/?account=sign-in">Sign in</a>
+            <a href="/?account=create">Create an account</a>
+          </div>
+        </details>
+      </div>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <a class="footer-brand" href="/">Maison Éloi<span>.</span></a>
+      <div class="footer-columns">
+        <section class="footer-section" aria-labelledby="footer-categories">
+          <h2 id="footer-categories">Categories</h2>
+          <ul>
+            <li><a href="/?category=footwear">Footwear</a></li>
+            <li><a href="/?category=shirts">Shirts</a></li>
+            <li><a href="/?category=pants">Pants</a></li>
+            <li><a href="/?category=accessories">Accessories</a></li>
+          </ul>
+        </section>
+        <section class="footer-section" aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="/?page=terms">Terms and Conditions</a></li>
+            <li><a href="/?page=privacy">Privacy Policy</a></li>
+            <li><a href="/?page=about">About the brand</a></li>
+          </ul>
+        </section>
+        <section class="footer-section" aria-labelledby="footer-contact">
+          <h2 id="footer-contact">Contact</h2>
+          <ul>
+            <li><a href="mailto:bonjour@example.com">bonjour@example.com</a></li>
+            <li>Monday to Friday, 09:00–17:00 CET</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Maison Éloi. Designed in France.</p>
+      <p>Made to be worn, and worn again.</p>
+    </div>
+  </footer>
+</body>
+</html>
