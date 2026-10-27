@@ -22,10 +22,10 @@ def serve_dir_directory_index():
         out = subprocess.Popen(['python3','app.py'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         stdout,stderr = out.communicate()
         return stdout if out.returncode == 0 else f"<pre style='color: red;'>{stdout.decode('utf-8')}</pre>"
-    if os.path.exists("index.html"):
-        return render_template('index.html')
+    if os.path.exists(os.path.join(static_file_dir, 'templates', 'Homepage.html')):
+        return render_template('Homepage.html')
     else:
-        return "<h1 align='center'>404</h1><h2 align='center'>Missing index.html file</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
+        return "<h1 align='center'>404</h1><h2 align='center'>Missing Homepage.html template</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
 
 @app.route('/index.html', methods=['GET'])
 def redirect_legacy_index():

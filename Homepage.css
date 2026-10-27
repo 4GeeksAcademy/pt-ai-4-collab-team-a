@@ -1,15 +1,15 @@
 :root {
 	color-scheme: light;
 	--paper: #fff;
-	--ink: #22251f;
-	--muted: #686d63;
-	--olive: #46533a;
-	--olive-dark: #303b29;
-	--olive-pale: #eef0e8;
-	--clay: #a6583c;
-	--line: #e4e5df;
+	--ink: #0f0f0f;
+	--muted: #145a43;
+	--olive: #145a43;
+	--olive-dark: #0b3d2e;
+	--olive-pale: #d7c7a1;
+	--accent-green: #2f8f6f;
+	--line: #d7c7a1;
 	--font-body: "DM Sans", sans-serif;
-	--font-display: "Playfair Display", Georgia, serif;
+	--font-display: Papyrus, "DM Sans", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -33,7 +33,7 @@ button, input { font: inherit; }
 
 a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible,
 .product-scroller:focus-visible {
-	outline: 3px solid var(--clay);
+	outline: 3px solid var(--accent-green);
 	outline-offset: 4px;
 }
 
@@ -103,7 +103,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 	font-size: 19px;
 }
 
-.brand-mark span, .footer-brand span { color: var(--clay); }
+.brand-mark span, .footer-brand span { color: var(--accent-green); }
 
 .brand-name, .footer-brand {
 	font-family: var(--font-display);
@@ -133,7 +133,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 
 .search-form input:focus-visible { outline: none; }
 
-.search-form:focus-within { outline: 3px solid var(--clay); outline-offset: 2px; }
+.search-form:focus-within { outline: 3px solid var(--accent-green); outline-offset: 2px; }
 
 .search-form button {
 	padding: 0 14px;
@@ -179,7 +179,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .account-panel p { margin: 0 0 8px; }
 .account-panel a { display: block; padding: 8px 0; font-size: 14px; text-decoration: none; }
 .account-panel a + a { border-top: 1px solid var(--line); }
-.account-panel a:hover { color: var(--clay); }
+.account-panel a:hover { color: var(--olive-dark); }
 .account-title { font-family: var(--font-display); font-size: 17px; }
 
 .hero {
@@ -289,7 +289,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 	text-underline-offset: 4px;
 }
 
-.text-link span { margin-left: 4px; color: var(--clay); }
+.text-link span { margin-left: 4px; color: var(--accent-green); }
 
 .product-scroller {
 	overflow-x: auto;
