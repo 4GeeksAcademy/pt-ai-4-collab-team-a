@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore FORM everyday clothing. Shop considered essentials, filtered by category and size.">
+    <title>Clothing & Essentials | FORM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: 'DM Sans', sans-serif;
+        --font-display: 'Libre Caslon Display', Georgia, serif;
+        --color-forest: #0B3D2E;
+        --color-dark-green: #145A43;
+        --color-sea: #2F8F6F;
+        --color-sand: #D7C7A1;
+        --color-ink: #0F0F0F;
+      }
+      button, select, a { -webkit-tap-highlight-color: transparent; }
+      button:not(:disabled), select { cursor: pointer; }
+      :focus-visible { outline: 2px solid #2F8F6F; outline-offset: 4px; }
+    </style>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+    <script src="catalog.js" defer></script>
+  </head>
+  <body class="bg-sand font-sans text-ink antialiased">
+    <a href="#main" class="sr-only z-50 bg-white p-4 focus:not-sr-only focus:fixed">Skip to content</a>
+    <site-header></site-header>
+    <main id="main" class="mx-auto max-w-[1440px] px-5 pb-20 pt-7 sm:px-8 lg:px-12">
+      <nav aria-label="Breadcrumb" class="mb-9 text-xs text-dark-green">
+        <ol class="flex items-center gap-2"><li><a href="catalog.html" class="hover:text-forest">Home</a></li><li aria-hidden="true">/</li><li aria-current="page" class="text-zinc-800">The collection</li></ol>
+      </nav>
+      <section aria-labelledby="catalog-title" id="catalog">
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-5">
+          <div>
+            <p class="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-forest"><span class="h-1.5 w-1.5 rounded-full bg-forest"></span> Everyday, considered.</p>
+            <h1 id="catalog-title" class="font-display text-5xl sm:text-6xl">The collection<span class="text-forest">.</span></h1>
+            <p class="mt-4 max-w-lg text-sm leading-6 text-zinc-500">Good pieces. Endless possibilities. Essentials to make your own.</p>
+          </div>
+          <span class="mb-1 text-xs text-zinc-500">A little less, a little better.</span>
+        </div>
+        <form id="filters" aria-label="Filter and sort products" class="mb-7 flex flex-wrap items-end gap-4 border-y border-dark-green/30 py-5">
+          <div class="w-[calc(50%-0.5rem)] sm:w-44">
+            <label for="category" class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Category</label>
+            <select id="category" name="category" class="w-full rounded-none border border-dark-green/30 bg-sand px-3 py-2.5 text-xs">
+              <option value="all">All categories</option><option value="Tops">Tops</option><option value="Knitwear">Knitwear</option><option value="Bottoms">Bottoms</option><option value="Outerwear">Outerwear</option><option value="Dresses">Dresses</option>
+            </select>
+          </div>
+          <div class="w-[calc(50%-0.5rem)] sm:w-36">
+            <label for="size" class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Size</label>
+            <select id="size" name="size" class="w-full rounded-none border border-dark-green/30 bg-sand px-3 py-2.5 text-xs"><option value="all">All sizes</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+          </div>
+          <button type="reset" class="min-h-10 text-xs text-zinc-500 underline underline-offset-4 hover:text-forest">Clear filters</button>
+          <div class="w-full sm:ml-auto sm:w-44">
+            <label for="sort" class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Sort by</label>
+            <select id="sort" name="sort" class="w-full rounded-none border border-dark-green/30 bg-sand px-3 py-2.5 text-xs"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option></select>
+          </div>
+        </form>
+        <div class="mb-5 flex items-center justify-between gap-3 text-xs"><p id="results-count" role="status" class="text-zinc-500">20 pieces</p><span class="flex items-center gap-1.5 text-zinc-500"><i data-lucide="layout-grid" class="h-3.5 w-3.5" aria-hidden="true"></i> The full edit</span></div>
+        <ul id="products" class="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-10" aria-label="Products"></ul>
+        <div id="empty" hidden class="py-24 text-center"><h2 class="font-display text-3xl">Nothing here just yet.</h2><p class="mt-3 text-sm text-zinc-500">No pieces match your selected filters.</p><button id="empty-reset" type="button" class="mt-5 border-b border-forest pb-1 text-sm text-forest">Clear filters</button></div>
+        <div class="mt-14 text-center"><p id="bottom-count" class="text-xs text-zinc-500">You've seen all 20 pieces</p><div class="mx-auto mt-4 h-0.5 w-32 bg-forest"></div></div>
+      </section>
+    </main>
+    <site-footer></site-footer>
+    <dialog id="product-dialog" aria-labelledby="detail-title" class="fixed inset-0 m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-2xl overflow-y-auto bg-sand p-5 backdrop:bg-black/40 sm:p-8">
+      <div class="mb-5 flex justify-end"><button id="close-dialog" type="button" aria-label="Close product details" title="Close" class="p-2"><i data-lucide="x" class="h-5 w-5" aria-hidden="true"></i></button></div>
+      <div id="product-detail"></div>
+    </dialog>
+    <p id="announcement" role="status" class="pointer-events-none fixed bottom-5 left-1/2 z-50 max-w-[calc(100%-2rem)] -translate-x-1/2 bg-forest px-5 py-3 text-center text-sm text-white empty:hidden"></p>
+    <script id="structured-data" type="application/ld+json"></script>
+  </body>
+</html>

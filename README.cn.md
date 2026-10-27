@@ -8,7 +8,7 @@
 
 ## 接下来怎么做？
 
-创建一个具有 [基本 HTML 页面结构](http://content.breatheco.de/lesson/what-is-html-learn-html#page-structure) 的 `index.html` 文件并通过使用以下命令，实时预览 Web 服务器提供的 HTML 页面：
+创建一个具有 [基本 HTML 页面结构](http://content.breatheco.de/lesson/what-is-html-learn-html#page-structure) 的 `catalog.html` 文件并通过使用以下命令，实时预览 Web 服务器提供的 HTML 页面：
 
 ```sh
 $ pip3 install flask && python3 server.py

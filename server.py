@@ -12,7 +12,7 @@ static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), './'
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 #disable cache
 
-# Serving the index file
+# Serving the catalog page
 @app.route('/', methods=['GET'])
 def serve_dir_directory_index():
     if os.path.exists("app.py"):
@@ -20,16 +20,16 @@ def serve_dir_directory_index():
         out = subprocess.Popen(['python3','app.py'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         stdout,stderr = out.communicate()
         return stdout if out.returncode == 0 else f"<pre style='color: red;'>{stdout.decode('utf-8')}</pre>"
-    if os.path.exists("index.html"):
-        return send_from_directory(static_file_dir, 'index.html')
+    if os.path.exists("catalog.html"):
+        return send_from_directory(static_file_dir, 'catalog.html')
     else:
-        return "<h1 align='center'>404</h1><h2 align='center'>Missing index.html file</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
+        return "<h1 align='center'>404</h1><h2 align='center'>Missing catalog.html file</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
 
 # Serving any other image
 @app.route('/<path:path>', methods=['GET'])
 def serve_any_other_file(path):
     if not os.path.isfile(os.path.join(static_file_dir, path)):
-        path = os.path.join(path, 'index.html')
+        path = os.path.join(path, 'catalog.html')
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0 # avoid cache memory
     return response
