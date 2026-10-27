@@ -1,0 +1,137 @@
+git push origin Pierce-newlin
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#E8F0E9">
+    <title>Checkout | Forme Studio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Forme Studio home">forme<span>.</span></a>
+      <div class="checkout-label"><span class="lock-icon" aria-hidden="true">⌑</span> SECURE CHECKOUT</div>
+      <a class="back-link" href="#order">Continue shopping</a>
+    </header>
+
+    <main class="checkout-layout">
+      <section class="form-column" aria-labelledby="page-title">
+        <div class="page-heading">
+          <p class="eyebrow">A considered wardrobe</p>
+          <h1 id="page-title">Almost yours.</h1>
+          <p class="intro">Complete your details to place your order.</p>
+        </div>
+
+        <form class="checkout-form">
+          <section class="form-section" aria-labelledby="contact-heading">
+            <div class="section-heading">
+              <span class="step-number">01</span>
+              <h2 id="contact-heading">Contact</h2>
+            </div>
+            <label class="field">
+              <span>Email address</span>
+              <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            </label>
+          </section>
+
+          <section class="form-section" aria-labelledby="shipping-heading">
+            <div class="section-heading">
+              <span class="step-number">02</span>
+              <h2 id="shipping-heading">Shipping details</h2>
+            </div>
+            <div class="field-row">
+              <label class="field">
+                <span>First name</span>
+                <input type="text" name="first-name" placeholder="First name" autocomplete="given-name" required>
+              </label>
+              <label class="field">
+                <span>Last name</span>
+                <input type="text" name="last-name" placeholder="Last name" autocomplete="family-name" required>
+              </label>
+            </div>
+            <label class="field">
+              <span>Street address</span>
+              <input type="text" name="address" placeholder="123 Market Street" autocomplete="street-address" required>
+            </label>
+            <div class="field-row">
+              <label class="field">
+                <span>City</span>
+                <input type="text" name="city" placeholder="City" autocomplete="address-level2" required>
+              </label>
+              <label class="field">
+                <span>Postal code</span>
+                <input type="text" name="postal-code" placeholder="Postal code" autocomplete="postal-code" required>
+              </label>
+            </div>
+            <label class="field">
+              <span>Country / region</span>
+              <select name="country" autocomplete="country-name" required>
+                <option value="" disabled selected>Select a country</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>Australia</option>
+              </select>
+            </label>
+          </section>
+
+          <section class="form-section payment-section" aria-labelledby="payment-heading">
+            <div class="section-heading">
+              <span class="step-number">03</span>
+              <h2 id="payment-heading">Payment</h2>
+            </div>
+            <div class="payment-methods" aria-label="Accepted payment methods">
+              <span class="method-card">VISA</span>
+              <span class="method-card mastercard"><i></i><i></i><span>mastercard</span></span>
+              <span class="method-card amex">AMEX</span>
+              <span class="method-card discover">DISCOVER</span>
+              <span class="method-card diners">DINERS CLUB</span>
+              <span class="method-card paypal">PayPal</span>
+            </div>
+            <label class="field">
+              <span>Name on card</span>
+              <input type="text" name="cardholder" placeholder="Name as it appears on card" autocomplete="cc-name" required>
+            </label>
+            <label class="field">
+              <span>Card number</span>
+              <input type="text" name="card-number" placeholder="0000 0000 0000 0000" inputmode="numeric" autocomplete="cc-number" required>
+            </label>
+            <div class="field-row">
+              <label class="field">
+                <span>Expiry date</span>
+                <input type="text" name="expiry" placeholder="MM / YY" autocomplete="cc-exp" required>
+              </label>
+              <label class="field">
+                <span>Security code</span>
+                <input type="text" name="security-code" placeholder="CVC" inputmode="numeric" autocomplete="cc-csc" required>
+              </label>
+            </div>
+          </section>
+
+          <p class="demo-note">Demo checkout. No payment will be taken.</p>
+          <button class="place-order" type="button" disabled>Your bag is empty <span>$0.00</span></button>
+          <p class="terms">By placing your order, you agree to our <a href="#terms">terms</a> and <a href="#privacy">privacy policy</a>.</p>
+        </form>
+      </section>
+
+      <aside class="order-column" id="order" aria-labelledby="order-heading">
+        <div class="order-topline">
+          <h2 id="order-heading">Your bag</h2>
+          <span class="item-count">0 items</span>
+        </div>
+        <div class="empty-bag">
+          <p>Your bag is empty</p>
+          <span>Add an item to see it here.</span>
+        </div>
+        <dl class="price-breakdown">
+          <div><dt>Subtotal</dt><dd>$0.00</dd></div>
+          <div><dt>Shipping</dt><dd>—</dd></div>
+          <div><dt>Estimated tax</dt><dd>—</dd></div>
+        </dl>
+        <div class="total-row"><span>Total</span><strong><small>USD</small> $0.00</strong></div>
+      </aside>
+    </main>
+    <footer class="site-footer"><span>© 2026 Forme Studio</span><span>Made to be worn, and worn again.</span><a href="#help">Need help?</a></footer>
+  </body>
+</html>
