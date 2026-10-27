@@ -2,6 +2,8 @@ try:
     # try to import flask, or return error if has not been installed
     from flask import Flask
     from flask import send_from_directory
+    from flask import render_template
+    from flask import redirect
 except ImportError:
     print("You don't have Flask installed, run `$ pip3 install flask` and try again")
     exit(1)
@@ -20,10 +22,14 @@ def serve_dir_directory_index():
         out = subprocess.Popen(['python3','app.py'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         stdout,stderr = out.communicate()
         return stdout if out.returncode == 0 else f"<pre style='color: red;'>{stdout.decode('utf-8')}</pre>"
-    if os.path.exists("index.html"):
-        return send_from_directory(static_file_dir, 'index.html')
+    if os.path.exists(os.path.join(static_file_dir, 'templates', 'Homepage.html')):
+        return render_template('Homepage.html')
     else:
-        return "<h1 align='center'>404</h1><h2 align='center'>Missing index.html file</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
+        return "<h1 align='center'>404</h1><h2 align='center'>Missing Homepage.html template</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
+
+@app.route('/index.html', methods=['GET'])
+def redirect_legacy_index():
+    return redirect('/')
 
 # Serving any other image
 @app.route('/<path:path>', methods=['GET'])
